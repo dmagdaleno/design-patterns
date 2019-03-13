@@ -1,4 +1,4 @@
-package com.dmagdaleno.strategy.impostos
+package com.dmagdaleno.designpatterns.strategy.impostos
 
 interface Imposto {
 

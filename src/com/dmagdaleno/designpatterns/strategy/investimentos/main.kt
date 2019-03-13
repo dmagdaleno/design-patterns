@@ -1,4 +1,4 @@
-package com.dmagdaleno.strategy.investimentos
+package com.dmagdaleno.designpatterns.strategy.investimentos
 
 fun main() {
     val valor = 100.0

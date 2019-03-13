@@ -1,4 +1,4 @@
-package com.dmagdaleno.strategy.investimentos
+package com.dmagdaleno.designpatterns.strategy.investimentos
 
 class Arrojado : Investimento {
 
