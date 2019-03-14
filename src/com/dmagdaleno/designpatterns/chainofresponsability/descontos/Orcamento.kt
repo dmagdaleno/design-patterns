@@ -1,4 +1,4 @@
-package com.dmagdaleno.designpatterns.chainofresponsability
+package com.dmagdaleno.designpatterns.chainofresponsability.descontos
 
 data class Orcamento(private val itens: MutableList<Item>) {
 

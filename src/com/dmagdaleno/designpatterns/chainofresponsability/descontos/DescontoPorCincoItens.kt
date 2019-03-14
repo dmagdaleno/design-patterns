@@ -1,4 +1,4 @@
-package com.dmagdaleno.designpatterns.chainofresponsability
+package com.dmagdaleno.designpatterns.chainofresponsability.descontos
 
 class DescontoPorCincoItens : Desconto {
 

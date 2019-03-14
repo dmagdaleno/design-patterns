@@ -1,13 +1,13 @@
-package com.dmagdaleno.designpatterns.chainofresponsability
+package com.dmagdaleno.designpatterns.chainofresponsability.descontos
 
 fun main(){
     val itens = mutableListOf(
         Item("Caneta", 9.0),
         Item("Caneta", 9.0),
         Item("Caneta", 9.0),
-        Item("Caneta", 9.0),
         Item("Caneta", 5.0),
-        Item("Lapis", 2.0))
+        Item("Lapis", 2.0)
+    )
 
     val orcamento = Orcamento(itens)
 

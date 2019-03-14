@@ -1,6 +1,7 @@
-package com.dmagdaleno.designpatterns.chainofresponsability
+package com.dmagdaleno.designpatterns.chainofresponsability.descontos
 
-class DescontoPorValor(private val valorLimite: Double) : Desconto {
+class DescontoPorValor(private val valorLimite: Double) :
+    Desconto {
 
     private var proximo: Desconto? = null
 
