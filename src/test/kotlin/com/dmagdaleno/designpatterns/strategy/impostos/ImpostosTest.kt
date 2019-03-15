@@ -1,5 +1,6 @@
 package com.dmagdaleno.designpatterns.strategy.impostos
 
+import com.dmagdaleno.designpatterns.extensions.arredonda
 import org.junit.Test
 import org.assertj.core.api.Assertions.assertThat
 
@@ -47,10 +48,10 @@ class ImpostosTest {
         val orcamento = Orcamento(999.99)
 
         // quando aplica o imposto ICCC
-        val imposto = calcula(orcamento, ICCC())
+        val imposto = calcula(orcamento, ICCC()).arredonda(3)
 
-        // o imposto deve ser 49.999500000000005
-        assertThat(imposto).isEqualTo(49.999500000000005)
+        // o imposto deve ser 50.0
+        assertThat(imposto).isEqualTo(50.0)
     }
 
     @Test
@@ -71,10 +72,10 @@ class ImpostosTest {
         val orcamento = Orcamento(3000.0)
 
         // quando aplica o imposto ICCC
-        val imposto = calcula(orcamento, ICCC())
+        val imposto = calcula(orcamento, ICCC()).arredonda(3)
 
-        // o imposto deve ser 210.00000000000003
-        assertThat(imposto).isEqualTo(210.00000000000003)
+        // o imposto deve ser 210.0
+        assertThat(imposto).isEqualTo(210.0)
     }
 
     @Test
@@ -83,9 +84,9 @@ class ImpostosTest {
         val orcamento = Orcamento(3001.0)
 
         // quando aplica o imposto ICCC
-        val imposto = calcula(orcamento, ICCC())
+        val imposto = calcula(orcamento, ICCC()).arredonda(3)
 
         // o imposto deve ser 270.08000000000004
-        assertThat(imposto).isEqualTo(270.08000000000004)
+        assertThat(imposto).isEqualTo(270.08)
     }
 }
