@@ -27,8 +27,14 @@ data class Orcamento(private val valorInicial: Double) {
     private class EmAprovacao: EstadoOrcamento {
         private val descricao = "EM_APROVACAO"
 
+        private var descontoAplicado = false
+
         override fun aplicaDesconto(orcamento: Orcamento) {
+            if(descontoAplicado)
+                throw IllegalStateException("Desconto já foi aplicado")
+
             orcamento.valor = orcamento.valor * 0.95
+            descontoAplicado = true
         }
 
         override fun aprova(orcamento: Orcamento) {
@@ -49,8 +55,14 @@ data class Orcamento(private val valorInicial: Double) {
     private class Aprovado: EstadoOrcamento {
         private val descricao = "APROVADO"
 
+        private var descontoAplicado = false
+
         override fun aplicaDesconto(orcamento: Orcamento) {
+            if(descontoAplicado)
+                throw IllegalStateException("Desconto já foi aplicado")
+
             orcamento.valor = orcamento.valor * 0.98
+            descontoAplicado = true
         }
 
         override fun aprova(orcamento: Orcamento) {
