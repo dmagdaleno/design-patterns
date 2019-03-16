@@ -41,4 +41,12 @@ class DescontosTest {
         orcamento.finaliza()
         orcamento.aplicaDesconto()
     }
+
+    @Test(expected = IllegalStateException::class)
+    fun aplicaDescontoDuasVezes() {
+        val orcamento = Orcamento(500.0)
+
+        orcamento.aplicaDesconto()
+        orcamento.aplicaDesconto()
+    }
 }
