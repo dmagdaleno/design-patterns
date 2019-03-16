@@ -1,7 +1,5 @@
 package com.dmagdaleno.designpatterns.templatemethod.relatorios
 
-import java.time.LocalDate
-
 class RelatorioSimples : TemplateRelatorio() {
 
     override fun geraCabecalho(banco: Banco) = "Banco: ${banco.nome}"
