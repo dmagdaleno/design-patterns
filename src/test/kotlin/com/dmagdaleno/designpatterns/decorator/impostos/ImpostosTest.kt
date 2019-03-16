@@ -21,6 +21,21 @@ class ImpostosTest {
 
         //então...
         assertThat(calculoIssComIcms).isEqualTo(calculoIss + calculoIcms)
+    }
 
+    @Test
+    fun testaImpostoMuitoAltoCompostoComICMS(){
+        // dado que...
+        val ima = ImpostoMuitoAlto()
+        val icms = ICMS()
+        val imaComIcms = ImpostoMuitoAlto(ICMS())
+
+        //quando...
+        val calculoIma = ima.calcula(orcamento)
+        val calculoIcms = icms.calcula(orcamento)
+        val calculoImaComIcms = imaComIcms.calcula(orcamento)
+
+        //então...
+        assertThat(calculoImaComIcms).isEqualTo(calculoIma + calculoIcms)
     }
 }
