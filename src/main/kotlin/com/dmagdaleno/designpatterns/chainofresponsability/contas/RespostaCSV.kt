@@ -4,16 +4,13 @@ class RespostaCSV : Resposta {
 
     private var proximo: Resposta? = null
 
-    override fun responde(requisicao: Requisicao, conta: Conta) {
+    override fun responde(requisicao: Requisicao, conta: Conta) =
         if(requisicao.formato == Formato.CSV)
             imprimeCSV(conta)
         else
-            proximo?.responde(requisicao, conta)
-    }
+            proximo?.responde(requisicao, conta) ?: ""
 
-    private fun imprimeCSV(conta: Conta) {
-        println("${conta.nome},${conta.saldo}")
-    }
+    private fun imprimeCSV(conta: Conta) = "${conta.nome},${conta.saldo}"
 
     override fun setProximo(resposta: Resposta) {
         this.proximo = resposta
