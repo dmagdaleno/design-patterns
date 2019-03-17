@@ -3,12 +3,12 @@ package com.dmagdaleno.designpatterns.factory.conexoes
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-class ConnectionFactoryTest {
+class ConexaoFactoryTest {
 
     @Test
     fun testaFabricaDeConexoes() {
-        val conexao = ConnectionFactory.getConnection()
+        val conexao = ConexaoFactory.getConnection()
 
-        assertThat(conexao).isNull()
+        assertThat(conexao).isNotNull
     }
 }
