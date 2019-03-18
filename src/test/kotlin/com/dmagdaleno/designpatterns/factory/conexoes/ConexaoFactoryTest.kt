@@ -10,5 +10,6 @@ class ConexaoFactoryTest {
         val conexao = ConexaoFactory.getConnection()
 
         assertThat(conexao).isNotNull
+        assertThat(conexao.usuario).isEqualTo("usuario")
     }
 }
