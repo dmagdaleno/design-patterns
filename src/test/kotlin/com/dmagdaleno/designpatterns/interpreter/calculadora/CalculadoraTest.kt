@@ -18,4 +18,25 @@ class CalculadoraTest {
 
         assertThat(expressao).isEqualTo(1)
     }
+
+    @Test
+    fun deveMultiplicarDoisEDois() {
+        val expressao = Multiplicacao(Numero(2), Numero(2)).avalia()
+
+        assertThat(expressao).isEqualTo(4)
+    }
+
+    @Test
+    fun deveDividirDoisPorDois(){
+        val expressao = Divisao(Numero(2), Numero(2)).avalia()
+
+        assertThat(expressao).isEqualTo(1)
+    }
+
+    @Test
+    fun deveDividirUmPorDois(){
+        val expressao = Divisao(Numero(1), Numero(2)).avalia()
+
+        assertThat(expressao).isEqualTo(0)
+    }
 }
