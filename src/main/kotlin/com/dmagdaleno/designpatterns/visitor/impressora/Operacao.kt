@@ -12,4 +12,10 @@ abstract class Operacao(
     }
 
     abstract fun avalia(valor1: Int, valor2: Int): Int
+
+    abstract fun operador(): String
+
+    override fun aceita(visitor: Visitor): String {
+        return visitor.visitaOperacao(this)
+    }
 }
