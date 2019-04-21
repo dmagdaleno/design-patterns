@@ -11,7 +11,7 @@ class ObjetoUnicoTest {
     @Test
     fun criaInstanciaDeFormaLazy() {
         val chamada = ObjetoUnico.metodoEstaticoQueNaoPrecisaDeInstancia()
-        
+
         assertThat(chamada).isEqualTo("chamou metodo")
         assertThat(ObjetoUnico.qtdInstancias).isEqualTo(0)
     }
